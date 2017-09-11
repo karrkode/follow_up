@@ -15,6 +15,8 @@ gem 'jquery-rails'
 gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
 
+gem 'simple_form'
+
 
 group :development, :test do
   gem 'byebug', platform: :mri
@@ -30,6 +32,7 @@ end
 
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
+gem 'pry'
 # %w[rspec-core rspec-expectations rspec-mocks rspec-rails rspec-support].each do |lib|
 #   gem lib, :git => "https://github.com/rspec/#{lib}.git", :branch => 'master'
 # end

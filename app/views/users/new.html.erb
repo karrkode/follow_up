@@ -1,0 +1,9 @@
+<%= simple_form_for @user do |f| %>
+	<%= f.input :first_name %>
+	<%= f.input :last_name %>
+	<%= f.input :email %>
+	<%= f.input :affiliation %>
+	<%= f.button :submit %>
+<% end %>
+
+<h3>* denotes required field</h3>
