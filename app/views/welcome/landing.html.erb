@@ -2,4 +2,12 @@
 
 <h2>This is an app for organizers to keep tab on their actions. It's very crude.</h2> 
 
-<%= link_to 'Users', users_path%> 
+<%= link_to 'Users', users_path%>
+<br>
+
+<h2>Click <%= link_to 'here', login_path%> to log in!</h2> 
+
+<% if logged_in? %>
+	<h2> <%= link_to 'Log Out', logout_path, method: :delete %> </h2>
+<% end %>
+
