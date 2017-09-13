@@ -6,3 +6,8 @@
 <br>
 
 <h2>Click <%= link_to 'here', login_path%> to log in!</h2> 
+
+<% if logged_in? %>
+	<h2> <%= link_to 'Log Out', logout_path, method: :delete %> </h2>
+<% end %>
+
