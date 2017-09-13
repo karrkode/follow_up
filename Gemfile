@@ -21,6 +21,7 @@ gem 'simple_form'
 group :development, :test do
   gem 'byebug', platform: :mri
   gem 'rspec-rails', '~> 3.6'
+  gem 'capybara', '~> 2.8'
 end
 
 group :development do
