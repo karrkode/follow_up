@@ -1,5 +1,12 @@
 <h2>hello!</h2>
 
+<h2><%= link_to 'Go back to users', users_path%></h2>
+
 <h3><%=@user.full_name%></h3>
 
-<h4>Click <%= link_to 'here', edit_user_path(@user)%> to edit</h4>
+
+
+<% if params[:id] == current_user.id%>
+	<h4>Click <%= link_to 'here', edit_user_path(@user)%> to edit</h4>
+<% end %>
+
