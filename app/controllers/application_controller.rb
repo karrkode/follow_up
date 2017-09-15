@@ -16,7 +16,6 @@ class ApplicationController < ActionController::Base
   end
 
   def relevant_user?
-  	binding.pry
   	session[:user_id] == params[:id].to_i
   end
 

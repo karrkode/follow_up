@@ -9,7 +9,5 @@
 
 
 10.times do |count|
-
 	User.create!(first_name:'Andrew'+count.to_s,last_name:'Carr', email:'a'+count.to_s+'@gmail.com',password:'password')
-
 end
