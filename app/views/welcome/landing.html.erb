@@ -5,10 +5,6 @@
 <%= link_to 'Users', users_path%>
 <br>
 
-<% if logged_in?%>
-	<h4><%=current_user.full_name%></h4>
-<% end %>
-
 
 <% if logged_in? %>
 	<h2> <%= link_to 'Log Out', logout_path, method: :delete %> </h2>
