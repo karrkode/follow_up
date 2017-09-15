@@ -1,9 +1,8 @@
 require 'rails_helper'
 
 describe "the user actions ", :type => :feature do
-  # before :each do
-  #   User.make(email: 'user@example.com', password: 'password', password_confirmation: 'password')
-  # end
+  before :each do
+  end
 
   it "signs in a users" do
     visit '/users/new'

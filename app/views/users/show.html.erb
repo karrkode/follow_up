@@ -5,8 +5,7 @@
 <h3><%=@user.full_name%></h3>
 
 
-
-<% if params[:id] == current_user.id%>
+<% if relevant_user?%>
 	<h4>Click <%= link_to 'here', edit_user_path(@user)%> to edit</h4>
 <% end %>
 

@@ -15,7 +15,12 @@ class ApplicationController < ActionController::Base
   	User.find(session[:user_id])
   end
 
+  def relevant_user?
+  	binding.pry
+  	session[:user_id] == params[:id].to_i
+  end
 
 
-	helper_method :logged_in?, :log_in, :current_user
+
+	helper_method :logged_in?, :log_in, :current_user, :relevant_user?
 end

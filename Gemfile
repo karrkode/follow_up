@@ -22,6 +22,8 @@ group :development, :test do
   gem 'byebug', platform: :mri
   gem 'rspec-rails', '~> 3.6'
   gem 'capybara', '~> 2.8'
+  gem 'factory_girl', '~> 4.5'
+  gem 'faker', '~> 1.6', '>= 1.6.6'
 end
 
 group :development do
