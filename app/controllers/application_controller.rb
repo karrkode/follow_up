@@ -19,7 +19,5 @@ class ApplicationController < ActionController::Base
   	session[:user_id] == params[:id].to_i
   end
 
-
-
 	helper_method :logged_in?, :log_in, :current_user, :relevant_user?
 end

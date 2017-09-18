@@ -1,0 +1,17 @@
+  <% if @organization.errors.any? %>
+    <div class="error_messages">
+      <h2>Form is invalid</h2>
+      <ul>
+        <% @organization.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+<%= simple_form_for @organization do |f| %>
+	<%= f.input :name %>
+	<%= f.input :website %>
+	<%= f.submit :submit %>
+<% end %>

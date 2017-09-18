@@ -1,0 +1,7 @@
+<ul>
+	<% @organizations.each do |org| %>
+		<li><%= link_to org.name, organization_path(org.id)%></li>
+	<% end %>
+</ul>
+
+<h3>Don't see your organization? Click <%= link_to 'Here', new_organization_path%> to add it!</h3>
