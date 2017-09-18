@@ -3,7 +3,7 @@ class CreateOrganizations < ActiveRecord::Migration[5.0]
     create_table :organizations do |t|
 
     	t.string :name, uniqueness: true
-    	t.string :website, uniqueness: true
+    	t.string :website
 
       t.timestamps
     end

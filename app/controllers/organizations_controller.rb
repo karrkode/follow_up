@@ -8,14 +8,14 @@ class OrganizationsController < ApplicationController
 		@organization = Organization.new(organization_params)
 
 		if @organization.save
-			redirect_to @organization
+			redirect_to organizations_path
 		else
 			render :new
 		end
 	end
 
 	def show
-		binding.pry
+		@organization = Organization.find_by(id:params[:id])
 	end
 
 	def index
