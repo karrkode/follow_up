@@ -20,6 +20,9 @@ class UsersController < ApplicationController
 	end
 
 	def edit
+		if !relevant_user?
+			redirect_to root_path
+		end
 		@user = User.find(params[:id])
 	end
 
