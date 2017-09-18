@@ -1,0 +1,5 @@
+<ul>
+	<% @organizations.each do |org| %>
+		<li><%= link_to org.name, org.website, target: :_blank %></li>
+	<% end %>
+</ul>

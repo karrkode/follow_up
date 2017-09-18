@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :organizations, only: [:new, :show, :index, :create]
   get 'sessions/new'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
@@ -6,6 +7,7 @@ Rails.application.routes.draw do
   root 'welcome#landing'
 
   resources :users
+  
 
   get    '/login',   to: 'sessions#new'
   post   '/login',   to: 'sessions#create'
