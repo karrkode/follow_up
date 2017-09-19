@@ -1,16 +1,20 @@
-<h1>Welcome to Follow Up!</h1> 
+<div id="welcome">
+	<h1>Welcome to Follow Up!</h1> 
+	<h2>This is an app for organizers to keep tab on their actions. It's very crude.</h2> 
+</div>
 
-<h2>This is an app for organizers to keep tab on their actions. It's very crude.</h2> 
+<div id="welcomeNav">
+	<%= link_to 'Users', users_path%>
+	<br>
 
-<%= link_to 'Users', users_path%>
-<br>
+	<%= link_to 'Organizations', organizations_path %>
+</div>
 
-<%= link_to 'Organizations', organizations_path %>
-
-
-<% if logged_in? %>
-	<h2> <%= link_to 'Log Out', logout_path, method: :delete %> </h2>
-<% else %>
-	<h2>Click <%= link_to 'here', login_path%> to log in!</h2> 
-<% end %>
+<div id="welcomeLogin">
+	<% if logged_in? %>
+		<h2> <%= link_to 'Log Out', logout_path, method: :delete %> </h2>
+	<% else %>
+		<h2>Click <%= link_to 'here', login_path%> to log in!</h2> 
+	<% end %>
+</div>
 
