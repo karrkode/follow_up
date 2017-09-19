@@ -11,13 +11,13 @@
   </head>
 
   <body>
+    <ul id='mainHeader'>
+    	<li class="mainLi"><%= link_to 'Home', root_path%></li>
+    	<li class="mainLi" ><%= link_to 'Learn More!', 'https://www.jacobinmag.com/2016/12/jane-mcalevey-unions-organizing-workers-socialism/', target: :_blank %> </li>
+    </ul>
     <% if logged_in?%> 
       <span>Welcome <%= current_user.full_name%></span>
     <% end %>
-    <ul>
-    	<li><%= link_to 'Home', root_path%></li>
-    	<li><%= link_to 'Learn More!', 'https://www.jacobinmag.com/2016/12/jane-mcalevey-unions-organizing-workers-socialism/', target: :_blank %> </li>
-    </ul>
       <%= yield %>
   </body>
 </html>
