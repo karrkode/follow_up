@@ -17,6 +17,19 @@ describe "the user actions ", :type => :feature do
     expect(page).to have_content 'Andrew Carr'
   end
 
+  it "creates a new session" do 
+    visit '/sessions/new' 
+
+    within('#newSession') do 
+      fill_in 'Email', with: 'a1@gmail.com'
+      fill_in 'Password', with: 'password'
+    end
+    click_button 'Log in'
+    expect(page).to have_content 'Welcome Andrew1 Carr'
+  end
+
+
+
   
 
 
