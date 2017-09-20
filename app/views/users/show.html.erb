@@ -6,7 +6,7 @@
 
 <div class="userMemberships">
 	<ul class="memberList">
-		<% @user.memberships.each do |mem| %>
+		<% @user.affiliations.each do |mem| %>
 			<li class="memberListItem"> <%= mem.name %> </li>
 		<% end %>
 	</ul>
