@@ -14,7 +14,8 @@
 	<% if logged_in? %>
 		<h2> <%= link_to 'Log Out', logout_path, method: :delete %> </h2>
 	<% else %>
-		<h2>Click <%= link_to 'here', login_path%> to log in!</h2> 
+		<h2>Click <%= link_to 'here', login_path, class:'link'%> to log in!</h2>
+		<h2>Otherwise, click <%= link_to 'here', new_user_path, class:'link' %> to create an account!</h2> 
 	<% end %>
 </div>
 
