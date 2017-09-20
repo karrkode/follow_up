@@ -4,6 +4,14 @@
 
 <h3><%=@user.full_name%></h3>
 
+<div class="userMemberships">
+	<ul class="memberList">
+		<% @user.memberships.each do |mem| %>
+			<li class="memberListItem"> <%= mem.name %> </li>
+		<% end %>
+	</ul>
+</div>
+
 
 <% if relevant_user?%>
 	<h4>Click <%= link_to 'here', edit_user_path(@user)%> to edit</h4>
