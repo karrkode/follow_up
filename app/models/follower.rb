@@ -1,2 +1,3 @@
-class Follower < ApplicationRecord
+class Follower <ApplicationRecord
+	
 end

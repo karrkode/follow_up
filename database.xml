@@ -32,27 +32,7 @@
     <type label="SET" length="1" sql="SET" quote=""/>
     <type label="Bit" length="0" sql="bit" quote=""/>
   </group>
-</datatypes><table x="276" y="58" name="???">
-<row name="id" null="1" autoincrement="1">
-<datatype>INTEGER</datatype>
-<default>NULL</default></row>
-<row name="organizer_id" null="1" autoincrement="0">
-<datatype>INTEGER</datatype>
-<default>NULL</default><relation table="users" row="id" />
-</row>
-<row name="follower_id" null="1" autoincrement="0">
-<datatype>INTEGER</datatype>
-<default>NULL</default><relation table="followers" row="id" />
-</row>
-<row name="organization_id" null="1" autoincrement="0">
-<datatype>INTEGER</datatype>
-<default>NULL</default><relation table="organizations" row="id" />
-</row>
-<key type="PRIMARY" name="">
-<part>id</part>
-</key>
-</table>
-<table x="30" y="75" name="users">
+</datatypes><table x="30" y="75" name="users">
 <row name="id" null="1" autoincrement="1">
 <datatype>INTEGER</datatype>
 <default>NULL</default></row>
@@ -72,7 +52,7 @@
 <part>id</part>
 </key>
 </table>
-<table x="273" y="217" name="memberships">
+<table x="187" y="275" name="memberships">
 <row name="id" null="1" autoincrement="1">
 <datatype>INTEGER</datatype>
 <default>NULL</default></row>
@@ -88,7 +68,7 @@
 <part>id</part>
 </key>
 </table>
-<table x="489" y="205" name="organizations">
+<table x="436" y="158" name="organizations">
 <row name="id" null="1" autoincrement="1">
 <datatype>INTEGER</datatype>
 <default>NULL</default></row>
@@ -102,7 +82,7 @@
 <part>id</part>
 </key>
 </table>
-<table x="465" y="4" name="followers">
+<table x="228" y="14" name="followers">
 <row name="id" null="1" autoincrement="1">
 <datatype>INTEGER</datatype>
 <default>NULL</default></row>
@@ -118,6 +98,14 @@
 <row name="email" null="1" autoincrement="0">
 <datatype>INTEGER</datatype>
 <default>NULL</default></row>
+<row name="organizer_id" null="1" autoincrement="0">
+<datatype>INTEGER</datatype>
+<default>NULL</default><relation table="users" row="id" />
+</row>
+<row name="organization_id" null="1" autoincrement="0">
+<datatype>INTEGER</datatype>
+<default>NULL</default><relation table="organizations" row="id" />
+</row>
 <key type="PRIMARY" name="">
 <part>id</part>
 </key>

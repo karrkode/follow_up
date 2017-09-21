@@ -7,7 +7,9 @@ Rails.application.routes.draw do
 
   root 'welcome#landing'
 
-  resources :users
+  resources :users do 
+  	resources :followers
+  end
   
 
   get    '/login',   to: 'sessions#new'
