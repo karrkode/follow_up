@@ -15,5 +15,14 @@
 
 <% if relevant_user?%>
 	<h4>Click <%= link_to 'here', edit_user_path(@user)%> to edit</h4>
+	<h4>Click <%= link_to 'here', new_user_follower_path(@user), class:'link'%> to create a follower!</h4>
+
+	<ul class="followerList">
+		<%current_user.followers.each do |follower| %>
+			<li class="followerLi"><%= follower.full_name%> (<%= follower.organization.name%>) </li>
+		<%end%>
+	</ul>
+
+
 <% end %>
 
