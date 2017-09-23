@@ -1,6 +1,7 @@
 class User < ApplicationRecord
 	has_many :memberships
 	has_many :affiliations, :through => :memberships, :source => :organization
+	has_many :followers, :foreign_key => :organizer_id
 	
 	has_secure_password
 

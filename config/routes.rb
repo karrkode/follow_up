@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  resources :followers
   resources :organizations, only: [:new, :show, :index, :create]
   get 'sessions/new'
 

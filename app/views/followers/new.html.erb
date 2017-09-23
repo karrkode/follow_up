@@ -1,0 +1,21 @@
+  <% if @follower.errors.any? %>
+    <div class="error_messages">
+      <h2>Form is invalid</h2>
+      <ul>
+        <% @follower.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+<%= simple_form_for [current_user,@follower] do |f| %>
+	<%= f.input :first_name %>
+	<%= f.input :last_name %>
+	<%= f.input :email %>
+	<%= f.input :phone %>
+	<%= f.association :organization, as: :radio_buttons,collection: Organization.order(:name) %>
+	<%= f.hidden_field :organizer_id, value: current_user.id%>
+	<%= f.button :submit %>
+<% end %>
