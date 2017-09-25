@@ -6,14 +6,19 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-
-
-10.times do |count|
-	User.create!(first_name:'Andrew'+count.to_s,last_name:'Carr', email:'a'+count.to_s+'@gmail.com',password:'password')
-end
-
 Organization.create!(name:'Clinton Foundation', website:'https://www.clintonfoundation.org/')
 
 Organization.create!(name:"The People's Lobby", website:'http://www.thepeopleslobbyusa.org/')
 
 Organization.create!(name: 'Our Revolution', website:'https://ourrevolution.com/')
+
+me = User.create!(first_name:'Andrew',last_name:'Carr', email:'aacarr5@gmail.com',password:'password')
+5.times {Follower.create!(first_name:Faker::Name.first_name,last_name:Faker::Name.last_name,email:Faker::Internet.email,phone:Faker::PhoneNumber.cell_phone,organization_id:[1,2,3].sample,organizer_id:me.id)}
+
+
+10.times do |count|
+	user = User.create!(first_name:Faker::Name.first_name,last_name:Faker::Name.last_name,email:Faker::Internet.email,password:'password')
+	5.times {Follower.create!(first_name:Faker::Name.first_name,last_name:Faker::Name.last_name,email:Faker::Internet.email,phone:Faker::PhoneNumber.cell_phone,organization_id:[1,2,3].sample,organizer_id:user.id)}
+end
+
+
