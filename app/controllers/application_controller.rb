@@ -16,7 +16,8 @@ class ApplicationController < ActionController::Base
   end
 
   def relevant_user?
-  	session[:user_id] == params[:id].to_i
+    return false if session[:user_id].to_i == params[:id].to_i
+    return false if session[:user_id].to_i == params[:user_id].to_i
   end
 
 	helper_method :logged_in?, :log_in, :current_user, :relevant_user?

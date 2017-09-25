@@ -1,23 +1,24 @@
 class FollowersController < ApplicationController
 
 	def new
+		redirect_to root_path if !relevant_user?
 		@follower = Follower.new
 	end
 
 	def create
 		@follower = Follower.new(follower_params)
-		# binding.pry
 		if @follower.valid?
 			@follower.save
 			redirect_to user_path(current_user.id)
 		else
-			binding.pry
 			render :new
-			# render :new
 		end
 	end
 
 	def edit
+		if !relevant_user?
+			redirect_to root_path
+		end
 	end
 
 	def update
