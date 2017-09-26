@@ -43,6 +43,10 @@ GEM
     arel (7.1.4)
     bcrypt (3.1.11)
     bindex (0.5.0)
+    bitters (1.2.0)
+      bourbon (>= 4.2)
+      sass (>= 3.4)
+      thor
     bourbon (4.3.4)
       sass (~> 3.4)
       thor (~> 0.19)
@@ -212,6 +216,7 @@ PLATFORMS
 
 DEPENDENCIES
   bcrypt (~> 3.1.7)
+  bitters
   bourbon
   byebug
   capybara (~> 2.8)
