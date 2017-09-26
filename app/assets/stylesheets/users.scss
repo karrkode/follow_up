@@ -1,3 +1,17 @@
 // Place all the styles related to the Users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.orgName {
+	display:inline;
+	border:1px solid $red;
+	margin-right: 10px;
+	margin-top: 10px;
+	padding: 10px
+}
+
+.orgList {
+	margin-bottom:10px;
+	margin-top:10px;
+}
