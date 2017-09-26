@@ -1,2 +1,12 @@
 <h2><%= link_to @organization.name, @organization.website, target: :_blank %></h2>
+<h3>Back to <%= link_to 'full list', organizations_path%></h3>
+
+<div class="organizationListDiv">
+	<h3>Members</h3>
+	<ul class="memberList">
+		<% @organization.members.each do |member| %>
+			<li class="memberListLi"><%=member.full_name%></li>
+		<% end %>
+	</ul>
+</div>
 
