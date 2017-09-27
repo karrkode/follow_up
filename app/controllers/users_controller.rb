@@ -21,9 +21,7 @@ class UsersController < ApplicationController
 	end
 
 	def edit
-		if !relevant_user?
-			redirect_to root_path
-		end
+		redirect_to root_path if !relevant_user?
 		@user = User.find(params[:id])
 	end
 
@@ -41,7 +39,6 @@ class UsersController < ApplicationController
 	end
 
 	def destroy
-		
 	end
 
 	private

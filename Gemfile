@@ -40,6 +40,5 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'bourbon'
 gem 'normalize-rails'
 gem 'rails-controller-testing'
-# %w[rspec-core rspec-expectations rspec-mocks rspec-rails rspec-support].each do |lib|
-#   gem lib, :git => "https://github.com/rspec/#{lib}.git", :branch => 'master'
-# end
+gem 'bitters'
+gem 'jquery-turbolinks'
