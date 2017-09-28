@@ -23,7 +23,7 @@
 	<ul class="orgList">
 		<li class="orgName org0">All Members</li>
 		<% Organization.all.each do |org| %>
-			<li class="orgName foo <%='org'+org.id.to_s%>"><%= org.name%></li>
+			<li class="orgName <%='org'+org.id.to_s%>"><%= org.name%></li>
 		<% end %>
 	</ul>
 		<ul class="followerList">
