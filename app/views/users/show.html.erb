@@ -5,7 +5,7 @@
 <h3><%=@user.full_name%></h3>
 
 <div class="userMemberships">
-	<span>You belong to...</span>
+	<span><%= relevant_user? ? "You" : "They" %> belong to...</span>
 	<ul class="memberList">
 		<% @user.affiliations.each do |mem| %>
 			<li class="memberListItem"> <%= mem.name %> </li>
