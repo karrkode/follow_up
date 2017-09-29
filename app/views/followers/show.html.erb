@@ -1,0 +1,5 @@
+<h1>This is general page for <%= @follower.full_name %></h1>
+
+<div id="followerInfo">
+	<span><%= @follower.full_name %> was added <%= time_ago_in_words(@follower.created_at)%>. </span>
+</div>

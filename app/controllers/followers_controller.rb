@@ -21,6 +21,11 @@ class FollowersController < ApplicationController
 		end
 	end
 
+	def show
+		redirect_to root_path if !relevant_user?
+		@follower = Follower.find_by(id:params[:id])
+	end
+
 	def update
 	end
 
