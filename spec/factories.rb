@@ -18,4 +18,8 @@ FactoryGirl.define do
 		website 'www.fakewebsite'
 	end
 
+	factory :note do 
+		info {Faker::Lorem.paragraph}
+	end
+
 end

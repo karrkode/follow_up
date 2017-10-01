@@ -12,13 +12,20 @@ RSpec.describe User, type: :model do
 			end
 		end
 
-
 		describe 'relationships' do 
 			it 'give member names' do 
 				membership = Membership.create(user_id:user.id,organization_id:organization.id)
 				expect(user.memberships.count).to eq(1)
 				expect(user.affiliations.first.name).to eq('Our revolution')
 			end
+
+			it 'should have followers' do 
+				follower = FactoryGirl.create(:follower,organization_id:organization.id,organizer_id:user.id)
+				expect(user.followers.length).to eq(1)
+				expect(user.followers.first.full_name).to eq(follower.full_name)
+			end
+
+
 		end
 	end
 
