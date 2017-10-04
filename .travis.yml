@@ -1,4 +1,26 @@
 language: ruby
+cache: bundler
+
+before_install: 
+  - rm Gemfile.lock || true
+  - bundle install
+
+install: bundle install --without development
 
 rvm:
-  - 2.2
+ - 2.2.0
+
+before_script:
+ - bundle exec rake db:drop 
+ - bundle exec rake db:create
+ - bundle exec rake db:migrate
+
+script: 
+ - bundle exec rspec spec
+
+branches:
+  only:
+  - master
+
+env: 
+ - DB="postgresql"
