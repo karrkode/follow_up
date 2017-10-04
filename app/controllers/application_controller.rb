@@ -3,17 +3,18 @@ class ApplicationController < ActionController::Base
 
   private
 
-	def logged_in?
-	  @current_user ||= User.find(session[:user_id]) if session[:user_id]
-	end
+  def logged_in?
+    @current_user ||= User.find(session[:user_id]) if session[:user_id]
+  end
 
-	def log_in(user)
+  def log_in(user)
     session[:user_id] = user.id
   end
 
   def current_user
-  	User.find(session[:user_id])
+    User.find(session[:user_id])
   end
+
 
   def relevant_user?
     return false if session[:user_id].nil? && session[:id].nil?
