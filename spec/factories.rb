@@ -15,7 +15,7 @@ FactoryGirl.define do
 
 	factory :organization do 
 		name { Faker::Company.name + ' ' + Faker::Company.suffix }
-		website 'www.fakewebsite'
+		website 'www.fakewebsite.com'
 	end
 
 	factory :note do 

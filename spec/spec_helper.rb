@@ -15,8 +15,11 @@
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
 
 require 'capybara/rspec'
+require 'support/spec_test_helper'
 
 RSpec.configure do |config|
+  # config.include Capybara::DSL
+  config.include SpecTestHelper, :type => :controller
   # rspec-expectations config goes here. You can use an alternate
   # assertion/expectation library such as wrong or the stdlib/minitest
   # assertions if you prefer.
