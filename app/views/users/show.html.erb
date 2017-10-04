@@ -5,15 +5,13 @@
 <h3><%=@user.full_name%></h3>
 
 <div class="userMemberships">
-	<span>You belong to...</span>
+	<span><%= relevant_user? ? "You" : "They" %> belong to...</span>
 	<ul class="memberList">
 		<% @user.affiliations.each do |mem| %>
 			<li class="memberListItem"> <%= mem.name %> </li>
 		<% end %>
 	</ul>
 </div>
-
-
 
 <% if relevant_user?%>
 	<h4>Click <%= link_to 'here', edit_user_path(@user)%> to edit</h4>
@@ -28,7 +26,7 @@
 	</ul>
 		<ul class="followerList">
 			<%current_user.followers.each do |follower| %>
-				<li class="followerLi <%= 'org'+follower.organization_id %>"> <%= follower.full_name%> (<%= follower.organization.name%>) </li>
+				<li class="followerLi <%= 'org'+follower.organization_id %>"> <%= link_to follower.full_name, user_follower_path(current_user.id,follower.id)%> (<%= follower.organization.name%>) </li>
 			<%end%>
 		</ul>
 	</div>
