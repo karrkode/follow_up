@@ -43,7 +43,8 @@ gem 'rails-controller-testing'
 gem 'bitters'
 gem 'jquery-turbolinks'
 gem 'gmaps-autocomplete-rails', github: "kristianmandrup/gmaps-autocomplete-rails"
-
+gem 'dotenv-rails', groups: [:development, :test]
+gem 'dotenv-rails', require: 'dotenv/rails-now'
 
 
 
