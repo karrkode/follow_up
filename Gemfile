@@ -3,7 +3,6 @@ source 'https://rubygems.org'
 git_source(:github) do |repo_name|
 end
 
-
 gem 'rails', '~> 5.0.5'
 gem 'pg', '~> 0.18'
 gem 'puma', '~> 3.0'
@@ -43,3 +42,10 @@ gem 'normalize-rails'
 gem 'rails-controller-testing'
 gem 'bitters'
 gem 'jquery-turbolinks'
+gem 'gmaps-autocomplete-rails', github: "kristianmandrup/gmaps-autocomplete-rails"
+
+
+
+
+
+
