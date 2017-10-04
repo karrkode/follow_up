@@ -13,10 +13,10 @@ RSpec.describe UsersController, type: :controller do
 			get :index
 			expect(response).to have_http_status(200)
 		end
+
 	end
 
 	context 'security' do
-
 		it 'should prevent unathorized user from editing another using' do 
 			get :edit, {id: user2.id}
 			expect(response).to redirect_to(root_path)
