@@ -14,4 +14,5 @@
 //= require jquery_ujs
 //= require gmaps-auto-complete
 //= require turbolinks
+//= require autocomplete
 //= require_tree .
