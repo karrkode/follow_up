@@ -21,6 +21,7 @@ script:
 branches:
   only:
   - master
+  - travis
 
 env: 
  - DB="postgresql"
