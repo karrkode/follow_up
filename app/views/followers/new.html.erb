@@ -16,7 +16,10 @@
 	<%= f.input :email %>
 	<%= f.input :phone %>
 	<%= f.association :organization, as: :radio_buttons,collection: Organization.order(:name) %>
-  <%= f.input :address, input_html: {id:"gmaps-input-address"} %>
+  <%= f.input :address, input_html: {id:"gmaps-input-address", placeholder:"Address goes here.."} %>
 	<%= f.hidden_field :organizer_id, value: current_user.id%>
 	<%= f.button :submit %>
 <% end %>
+
+
+<%= render partial:'auto_script'%>
