@@ -1,4 +1,5 @@
 $(document).ready(function() {
+	console.log('hello')
 	var placeSearch, autocomplete;
 
 	var componentForm = {
@@ -61,4 +62,6 @@ $(document).ready(function() {
 	//     });
 	//   }
 	// }
+	console.log('goodbye')
+
 })

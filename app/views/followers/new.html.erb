@@ -21,5 +21,4 @@
 	<%= f.button :submit %>
 <% end %>
 
-
-<%= render partial:'auto_script'%>
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=<%=ENV['GGL_API_KEY']%>&libraries=places&callback=initAutocomplete"></script>
