@@ -11,9 +11,9 @@ rvm:
  - 2.2.2
 
 before_script:
- - bundle exec rake db:drop 
- - bundle exec rake db:create
- - bundle exec rake db:migrate
+ - rake db:drop 
+ - rake db:create
+ - rake db:migrate
 
 script: 
  - rspec spec
