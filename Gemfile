@@ -42,7 +42,6 @@ gem 'normalize-rails'
 gem 'rails-controller-testing'
 gem 'bitters'
 gem 'jquery-turbolinks'
-gem 'gmaps-autocomplete-rails', '~> 0.1.4'
 gem 'dotenv-rails', groups: [:development, :test]
 gem 'dotenv-rails', require: 'dotenv/rails-now'
 
