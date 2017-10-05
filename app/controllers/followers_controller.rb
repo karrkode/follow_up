@@ -6,6 +6,7 @@ class FollowersController < ApplicationController
 	end
 
 	def create
+		binding.pry
 		@follower = Follower.new(follower_params)
 		if @follower.valid?
 			@follower.save
