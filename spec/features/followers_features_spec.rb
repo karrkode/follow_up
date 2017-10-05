@@ -3,11 +3,13 @@ require 'rails_helper'
 describe "the user actions ", :type => :feature do
 
 	before(:each) do
+		User.delete_all
 	end
 
 	context 'input fields' do 
-		user = FactoryGirl.create(:user,email:'joe@gmail.com')
-		it 'should have google maps input' do #it block should be extracted
+		let (:user) { FactoryGirl.create(:user,email:'joe@gmail.com') }
+
+		it 'should have google maps input' do
 			visit '/login'
 
 	    within('#newSession') do 
