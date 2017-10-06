@@ -20,5 +20,3 @@
 	<%= f.hidden_field :organizer_id, value: current_user.id%>
 	<%= f.button :submit %>
 <% end %>
-
-<script async defer src="https://maps.googleapis.com/maps/api/js?key=<%=ENV['GGL_API_KEY']%>&libraries=places&callback=initAutocomplete"></script>

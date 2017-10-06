@@ -2,6 +2,13 @@ $(document).ready(function() {
 	console.log('hello')
 	var placeSearch, autocomplete;
 
+  autocomplete = new google.maps.places.Autocomplete(
+      /** @type {!HTMLInputElement} */(document.getElementById('gmaps-input-address')),
+      {types: ['geocode']});
+
+  google.maps.event.addDomListener(window, 'load', initAutocomplete);
+
+  
 	var componentForm = {
 	  street_number: 'short_name',
 	  route: 'long_name',
@@ -11,13 +18,13 @@ $(document).ready(function() {
 	  postal_code: 'short_name'
 	};
 
+
 	function initAutocomplete() {
 		console.log('initiated')
 	  // Create the autocomplete object, restricting the search to geographical
 	  // location types.
-	  autocomplete = new google.maps.places.Autocomplete(
-	      /** @type {!HTMLInputElement} */(document.getElementById('gmaps-input-address')),
-	      {types: ['geocode']});
+
+
 
 	  // When the user selects an address from the dropdown, populate the address
 	  // fields in the form.
