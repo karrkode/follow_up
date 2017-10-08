@@ -1,8 +1,5 @@
-console.log('hello')
 var placeSearch, autocomplete;
-
-
-
+ 
 var componentForm = {
   street_number: 'short_name',
   route: 'long_name',
@@ -14,7 +11,6 @@ var componentForm = {
 
 
 function initAutocomplete() {
-	console.log('initiated')
 
 	
   autocomplete = new google.maps.places.Autocomplete(
@@ -37,7 +33,39 @@ function fillInAddress() {
 	console.log("fill in adddress change")
   // Get the place details from the autocomplete object.
   var place = autocomplete.getPlace();
-  console.log(place)
+
+  var address = {}
+  debugger
+  address["lat"] = place.geometry.location.lat()
+  address["lng"] = place.geometry.location.lng()
+  address_length = place.address_components.length
+  if (address_length == 8) {
+	  address["street_number"] = place.address_components[0].long_name
+	  address["street_name"] = place.address_components[1].long_name
+	  address["neighborhood"] = place.address_components[2].long_name
+	  address["city"] = place.address_components[3].long_name
+	  address["county"] = place.address_components[4].long_name
+	  address["state"] = place.address_components[5].long_name
+	  address["zip"] = place.address_components[6].long_name
+	} else if (address_lengh == 6) {
+		adddress["neighborhood"] = place.address_components[1].long_name
+		address["city"] = place.address_components[2].long_name
+		address["county"] = place.address_components[3].long_name
+		place["state"] = place.address_components[4].long_name
+		adddress["zip"] = place.address_components[5].long_name
+	}	else if (address_length == 5) {
+	  adddress["neighborhood"] = place.address_components[0].long_name
+	  address["city"] = place.address_components[1].long_name
+	  address["county"] = place.address_components[2].long_name
+	  place["state"] = place.address_components[3].long_name
+	} else {
+		console.log('Insufficient locationd data')
+	}
+
+  // console.log(address)
+
+  // debugger
+  // console.log(place)
 
   // for (var component in componentForm) {
   //   document.getElementById(component).value = '';
@@ -70,4 +98,3 @@ function fillInAddress() {
 //     });
 //   }
 // }
-console.log('goodbye')
