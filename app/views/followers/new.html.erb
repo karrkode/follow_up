@@ -1,13 +1,13 @@
-  <% if @follower.errors.any? %>
-    <div class="error_messages">
-      <h2>Form is invalid</h2>
-      <ul>
-        <% @follower.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
+<% if @follower.errors.any? %>
+  <div class="error_messages">
+    <h2>Form is invalid</h2>
+    <ul>
+      <% @follower.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
 
 
 <%= simple_form_for [current_user,@follower] do |f| %>
@@ -17,9 +17,18 @@
 	<%= f.input :phone %>
 	<%= f.association :organization, as: :radio_buttons,collection: Organization.order(:name) %>
   <%= f.input :address, input_html: {id:"gmaps-input-address", placeholder:"Address goes here.."} %>
+  <%= f.hidden_field :street_number, value:''%>
+  <%= f.hidden_field :street_name, value:''%>
+  <%= f.hidden_field :neighborhood, value:''%>
+  <%= f.hidden_field :city , value:''%>
+  <%= f.hidden_field :county , value:''%>
+  <%= f.hidden_field :state , value:''%>
+  <%= f.hidden_field :zip , value:''%>
+  <%= f.hidden_field :latitude, value:''%>
+  <%= f.hidden_field :longitude, value:''%>
 	<%= f.hidden_field :organizer_id, value: current_user.id%>
 	<%= f.button :submit %>
 <% end %>
 
 
-  <script src="https://maps.googleapis.com/maps/api/js?key=<%=ENV['GGL_API_KEY']%>&libraries=places&callback=initAutocomplete" async defer></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=<%=ENV['GGL_API_KEY']%>&libraries=places&callback=initAutocomplete" async defer></script>
