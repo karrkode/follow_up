@@ -18,12 +18,12 @@
 	<h4>Click <%= link_to 'here', new_user_follower_path(@user), class:'link'%> to create a follower!</h4>
 
 	<div class="followerListDiv">
-	<ul class="orgList">
-		<li class="orgName org0">All Members</li>
+	<div class="orgList">
+		<div class="orgName org0">All Members</div>
 		<% Organization.all.each do |org| %>
-			<li class="orgName <%='org'+org.id.to_s%>"><%= org.name%></li>
+			<div class="orgName <%='org'+org.id.to_s%>"><%= org.name%></div>
 		<% end %>
-	</ul>
+	</div>
 		<ul class="followerList">
 			<%current_user.followers.each do |follower| %>
 				<li class="followerLi <%= 'org'+follower.organization_id %>"> <%= link_to follower.full_name, user_follower_path(current_user.id,follower.id)%> (<%= follower.organization.name%>) </li>
