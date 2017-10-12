@@ -22,7 +22,7 @@ group :development, :test do
   gem 'rspec-rails', '~> 3.6'
   gem 'capybara', '~> 2.8'
   gem 'factory_girl', '~> 4.5'
-  gem 'faker', '~> 1.6', '>= 1.6.6'
+  gem 'faker', :git => 'git://github.com/stympy/faker.git', :branch => 'master'
 	gem 'factory_girl_rails'
 end
 
