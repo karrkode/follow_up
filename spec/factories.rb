@@ -11,6 +11,15 @@ FactoryGirl.define do
 		last_name { Faker::Name.last_name }
 		email { Faker::Internet.email }
 		phone { Faker::PhoneNumber.cell_phone }
+		street_name {Faker::Address.street_name}
+		street_number {[1..5000].sample}
+		neighborhood {Faker::Address.community}
+		city {Faker::Address.city}
+		county {"County of "+Faker::TwinPeaks.character}
+		state {Faker::Address.state}
+		zip {Faker::Address.zip}
+		latitude {Faker::Address.latitude}
+		longitude {Faker::Address.longitude}
 	end
 
 	factory :organization do 
@@ -21,5 +30,6 @@ FactoryGirl.define do
 	factory :note do 
 		info {Faker::Lorem.paragraph}
 	end
+
 
 end
