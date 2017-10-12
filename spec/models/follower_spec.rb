@@ -6,7 +6,6 @@ RSpec.describe Follower, type: :model do
 	let (:follower) {FactoryGirl.create(:follower,organizer_id:user.id,organization_id:organization.id)}
 	
 	context "creation" do
-		end 
 	end
 
 	context "relationships" do 
