@@ -15,3 +15,9 @@
 
 # Ignore Byebug command history file.
 .byebug_history
+
+# Ignore environment variables
+/.env
+
+#
+cutpaste.txt

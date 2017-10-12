@@ -18,7 +18,7 @@ RSpec.describe UsersController, type: :controller do
 
 	context 'security' do
 		it 'should prevent unathorized user from editing another using' do 
-			get :edit, {id: user2.id}
+			get :edit, params: {id: user2.id}
 			expect(response).to redirect_to(root_path)
 		end
 

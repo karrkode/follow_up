@@ -4,6 +4,9 @@ RSpec.describe Follower, type: :model do
 	let (:user) {FactoryGirl.create(:user)}
 	let (:organization) { FactoryGirl.create(:organization)}
 	let (:follower) {FactoryGirl.create(:follower,organizer_id:user.id,organization_id:organization.id)}
+	
+	context "creation" do
+	end
 
 	context "relationships" do 
 		it 'should have a relationship to organizer' do 

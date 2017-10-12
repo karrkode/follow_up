@@ -3,7 +3,6 @@ source 'https://rubygems.org'
 git_source(:github) do |repo_name|
 end
 
-
 gem 'rails', '~> 5.0.5'
 gem 'pg', '~> 0.18'
 gem 'puma', '~> 3.0'
@@ -23,7 +22,7 @@ group :development, :test do
   gem 'rspec-rails', '~> 3.6'
   gem 'capybara', '~> 2.8'
   gem 'factory_girl', '~> 4.5'
-  gem 'faker', '~> 1.6', '>= 1.6.6'
+  gem 'faker', :git => 'git://github.com/stympy/faker.git', :branch => 'master'
 	gem 'factory_girl_rails'
 end
 
@@ -43,3 +42,10 @@ gem 'normalize-rails'
 gem 'rails-controller-testing'
 gem 'bitters'
 gem 'jquery-turbolinks'
+gem 'dotenv-rails', groups: [:development, :test]
+gem 'dotenv-rails', require: 'dotenv/rails-now'
+
+
+
+
+

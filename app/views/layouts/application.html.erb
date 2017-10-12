@@ -4,16 +4,18 @@
     <title>FollowUp</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <%= csrf_meta_tags %>
-
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-
+    <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.18/jquery-ui.min.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=<%=ENV['GGL_API_KEY']%>&libraries=places&callback=initAutocomplete" async defer></script>
   </head>
 
   <body>
     <ul id='mainHeader'>
-    	<li class="mainLi"><%= link_to 'Home', root_path%></li>
-    	<li class="mainLi" ><%= link_to 'Learn More!', 'https://www.jacobinmag.com/2016/12/jane-mcalevey-unions-organizing-workers-socialism/', target: :_blank %> </li>
+      <li class="mainLi"><%= link_to 'Home', root_path%></li>
+      <li class="mainLi" ><%= link_to 'Learn More!', 'https://www.jacobinmag.com/2016/12/jane-mcalevey-unions-organizing-workers-socialism/', target: :_blank %> </li>
     </ul>
     <% if logged_in?%> 
       <span>Welcome <%= link_to current_user.full_name, user_path(current_user)%></span>
