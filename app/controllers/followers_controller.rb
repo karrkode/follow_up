@@ -36,6 +36,6 @@ class FollowersController < ApplicationController
 	private 
 
 	def follower_params
-		params.require(:follower).permit(:first_name,:last_name,:phone,:email,:organizer_id,:organization_id)
+		params.require(:follower).permit(:first_name,:last_name,:phone,:email,:organizer_id,:organization_id,:address, :longitude, :latitude, :zip, :street_number, :street_name, :city, :neighborhood, :state)
 	end
 end
