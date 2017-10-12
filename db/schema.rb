@@ -25,6 +25,7 @@ ActiveRecord::Schema.define(version: 20171008053305) do
     t.datetime "updated_at",      null: false
     t.string   "organizer_id"
     t.string   "organization_id"
+    t.string   "address"
     t.string   "street_number"
     t.string   "street_name"
     t.string   "neighborhood"
