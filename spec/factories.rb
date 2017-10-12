@@ -20,6 +20,7 @@ FactoryGirl.define do
 		zip {Faker::Address.zip}
 		latitude {Faker::Address.latitude}
 		longitude {Faker::Address.longitude}
+		address '255 N Fakestreet, Chicago, IL 60614'
 	end
 
 	factory :organization do 

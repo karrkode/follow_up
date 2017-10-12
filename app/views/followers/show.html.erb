@@ -1,5 +1,17 @@
 <h1>This is general page for <%= @follower.full_name %></h1>
 
 <div id="followerInfo">
-	<span><%= @follower.full_name %> was added <%= time_ago_in_words(@follower.created_at)%>. </span>
+	<h3><%= @follower.full_name %> was added <%= time_ago_in_words(@follower.created_at)%>. </h3>
+	<span class="follower-address"><%= @follower.address%> </span>
+</div>
+
+
+<div id="followerMap">
+	<iframe
+  width="600"
+  height="450"
+  frameborder="0" style="border:0"
+  src="https://www.google.com/maps/embed/v1/view?key=<%=ENV['GGL_API_KEY']%>
+    &center=<%=@follower.longitude%>,<%=@follower.latitude%>&zoom=11" allowfullscreen>
+	</iframe>
 </div>
