@@ -5,8 +5,4 @@ module SpecTestHelper
 		request.session[:user] = user.id
 	end
 
-	def respond_only_to(*attrs)
-		
-	end
-	
 end

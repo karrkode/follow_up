@@ -32,6 +32,7 @@ class FollowersController < ApplicationController
 	def destroy
 	end
 
+
 	private 
 
 	def follower_params

@@ -1,8 +1,9 @@
-<h1>This is general page for <%= @follower.full_name %></h1>
+<h1>Name:<%= @follower.full_name %></h1>
+<h2>Organization:<%= @follower.organization.name%></h2>
 
 <div id="followerInfo">
 	<h3><%= @follower.full_name %> was added <%= time_ago_in_words(@follower.created_at)%>. </h3>
-	<span class="follower-address"><%= @follower.address%> </span>
+	<span class="follower-address">Address:<%=@follower.address%> </span>
 </div>
 
 
@@ -11,7 +12,6 @@
   width="600"
   height="450"
   frameborder="0" style="border:0"
-  src="https://www.google.com/maps/embed/v1/view?key=<%=ENV['GGL_API_KEY']%>
-    &center=<%=@follower.longitude%>,<%=@follower.latitude%>&zoom=11" allowfullscreen>
+  src="https://www.google.com/maps/embed/v1/search?q=<%=@follower.ggl_address%>&key=<%=ENV['GGL_API_KEY']%>&zoom=14" allowfullscreen>
 	</iframe>
 </div>
