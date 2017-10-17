@@ -15,3 +15,19 @@
   src="https://www.google.com/maps/embed/v1/search?q=<%=@follower.ggl_address%>&key=<%=ENV['GGL_API_KEY']%>&zoom=14" allowfullscreen>
 	</iframe>
 </div>
+
+
+<div id="follower-notes">
+	<%@follower.notes.each do |note| %>
+		<div class="follower-note"> <span class="note-text"> <%=note.text%> </span></div>
+	<% end %>
+</div>
+
+<div id="new-note">
+	<%= simple_form_for @note do |f| %>
+		<%= f.input :info, placeholder:'Write your note...' %>
+		<%= f.hidden_field :notable_type, value:'follower'%>
+		<%= f.button :submit %>
+	<% end %>
+</div>
+

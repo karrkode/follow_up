@@ -9,6 +9,10 @@ Rails.application.routes.draw do
   end
 
   resources :users, only: [:new, :create,:edit,:update,:destroy]
+
+  get '/note/new', :to => 'note#new', :as => :new_note
+  get '/note/:id', :to => 'note#show', :as => :notes
+  post '/note/new', :to => 'note#create'
   
   get    '/login',   to: 'sessions#new'
   post   '/login',   to: 'sessions#create'
