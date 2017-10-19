@@ -10,9 +10,9 @@ Rails.application.routes.draw do
 
   resources :users, only: [:new, :create,:edit,:update,:destroy]
 
-  get '/note/new', :to => 'note#new', :as => :new_note
-  get '/note/:id', :to => 'note#show', :as => :notes
-  post '/note/new', :to => 'note#create'
+  get '/notes/new', :to => 'notes#new', :as => :new_note
+  get '/notes/:id', :to => 'notes#show', :as => :notes
+  post '/notes/new', :to => 'notes#create'
   
   get    '/login',   to: 'sessions#new'
   post   '/login',   to: 'sessions#create'
