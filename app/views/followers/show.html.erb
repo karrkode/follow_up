@@ -18,16 +18,25 @@
 
 
 <div id="follower-notes">
+	<h3>Existing Notes:</h3>
 	<%@follower.notes.each do |note| %>
-		<div class="follower-note"> <span class="note-text"> <%=note.text%> </span></div>
+		<div class="follower-note"> 
+			<span class="note-text"> <%=note.info%></span>
+			<br>
+			<h5>Added <%= time_ago_in_words(note.created_at) unless note.created_at.nil?%></h5>
+		</div>
 	<% end %>
 </div>
 
-<div id="new-note">
-	<%= simple_form_for @note do |f| %>
+
+<div id="new-note-form">
+	<h4>Add a note...</h4>
+	<%= simple_form_for @note, url: new_note_path(@note), remote:true do |f| %>
 		<%= f.input :info, placeholder:'Write your note...' %>
-		<%= f.hidden_field :notable_type, value:'follower'%>
-		<%= f.button :submit %>
+		<%= f.hidden_field :notable_type, value:'Follower'%>
+		<%= f.hidden_field :notable_id, value:params[:id]%>
+		<%= f.hidden_field :author_id, value: current_user.id%>
+		<%= f.button :submit, id:'submit-f-note' %>
 	<% end %>
 </div>
 
