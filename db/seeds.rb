@@ -7,6 +7,7 @@ Membership.create(user_id:me.id,organization_id:1)
 Membership.create(user_id:me.id,organization_id:2)
 Membership.create(user_id:me.id,organization_id:3)
 25.times {FactoryGirl.create(:follower,organization_id:[1,2,3].sample,organizer_id:me.id)}
+Follower.create(first_name:'Sam',last_name:'Anderson',organization_id:1,organizer_id:me.id,address:'1461 W Fullerton Ave, Chicago, IL, United States')
 
 10.times do |count|
 	user = FactoryGirl.create(:user)

@@ -1,0 +1,5 @@
+<%= form_for @note, remote:true do |f| %>
+	<%= f.text %>
+	<%= f.hidden_field :notable_type, value:''%>
+	<%= f.button :submit %>
+<% end %>

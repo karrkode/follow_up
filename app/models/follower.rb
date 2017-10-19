@@ -10,4 +10,13 @@ class Follower <ApplicationRecord
 	def full_name
 		first_name + " " + last_name
 	end
+
+	def ggl_address
+		self.street_number.nil? ? "#{self.longitude},#{self.latitude}" : Follower.to_ggl_api_address(self.address)
+	end
+
+	def self.to_ggl_api_address(addr)
+		addr.gsub(" ","+")
+	end
+
 end

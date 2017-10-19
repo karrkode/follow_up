@@ -23,7 +23,9 @@ class FollowersController < ApplicationController
 
 	def show
 		redirect_to root_path if !relevant_user?
-		@follower = Follower.find_by(id:params[:id])
+		@follower = Follower.where(id:params[:id])[0]
+		@notes = Note.where(author_id:@follower.id)
+		@note = Note.new
 	end
 
 	def update
@@ -31,6 +33,7 @@ class FollowersController < ApplicationController
 
 	def destroy
 	end
+
 
 	private 
 
