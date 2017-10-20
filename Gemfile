@@ -25,7 +25,6 @@ group :development, :test do
   gem 'factory_girl', '~> 4.5'
   gem 'faker', '~> 1.6', '>= 1.6.6'
 	gem 'factory_girl_rails'
-  # gem 'rake'
 end
 
 group :development do
