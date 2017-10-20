@@ -5,7 +5,10 @@ before_install:
   - rm Gemfile.lock || true
   - bundle install
 
-install: bundle install --without development
+install:
+
+  bundle install --deployment --without development
+  bundler_args --without production
 
 rvm:
  - 2.2.2
@@ -25,5 +28,3 @@ branches:
 
 env: 
  - DB="postgresql"
-
- # test
