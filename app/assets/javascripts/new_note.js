@@ -1,11 +1,7 @@
-$(function(){
+$(document).on('turbolinks:load', function(){
 	$('#submit-f-note').click(function(e){
 		e.preventDefault()
-		console.log('pressed')
-		debugger;
-
 		var noteJson = getFormData($('form'))
-
 		$.ajax({url:'/notes/new',
 		 			  type:'POST',
 		 			  dataType: 'json',
@@ -20,13 +16,10 @@ $(function(){
 
 	function getFormData(form) {
 		var serialized = $(form).serializeArray()
-		
 		var json = {}
-
 		$.map(serialized, function(n,i){
 			json[n['name']] = n['value']
 		});
-
 		return json	
 	}
 

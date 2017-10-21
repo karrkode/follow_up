@@ -6,7 +6,6 @@ class NotesController < ApplicationController
 	end
 
 	def create
-		binding.pry
 		@note = Note.new(notes_params)
 
 		if @note.save 
