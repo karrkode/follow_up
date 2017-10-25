@@ -2,6 +2,8 @@ class Follower <ApplicationRecord
 	belongs_to :organization
 	belongs_to :organizer, class_name: 'User'
 	has_many :notes, as: :notable
+	has_many :taggings, :as => :taggable
+	has_many :tags, through: :taggings
 	validates_presence_of :first_name, :last_name
 
 	validates :email, format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i, on: :create }
