@@ -16,7 +16,7 @@ class Follower <ApplicationRecord
 	end
 
 	def ggl_address
-		self.street_number.nil? ? "#{self.longitude},#{self.latitude}" : Follower.to_ggl_api_address(self.address)
+		self.street_number.nil? ? "#{self.longitude},#{self.latitude}" : Follower.to_ggl_api_address(self.address) #refactor
 	end
 
 	def self.to_ggl_api_address(addr)
@@ -24,12 +24,10 @@ class Follower <ApplicationRecord
 	end
 
 	def add_tags(ids)
-		binding.pry
 		ids.each do |id|
 			next if id == ""
 			Tagging.create!(taggable_type:'Follower',taggable_id:self.id,tag_id:id.to_i)
 		end
-		binding.pry
 	end
 
 end
