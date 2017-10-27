@@ -10,7 +10,8 @@ class NotesController < ApplicationController
 
 		if @note.save 
 			respond_to do |format|
-				format.json {render head:"ok", json:{data:@note.toNoteDiv}}
+				@note.add_tags(params["note"]["tag_ids"])
+				format.json {render head:"ok", json:{data:@note.toNoteDiv}} #refactor?
 				format.html { root_path }
 			end
 		else 
@@ -36,7 +37,7 @@ class NotesController < ApplicationController
 	private
 
 	def notes_params
-		params.require(:note).permit(:author_id,:notable_type,:notable_id,:info)
+		params.require(:note).permit(:author_id,:notable_type,:notable_id,:info,:tag_ids)
 	end
 
 end
