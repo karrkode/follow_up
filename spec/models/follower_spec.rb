@@ -5,7 +5,7 @@ RSpec.describe Follower, type: :model do
 	let (:organization) { FactoryGirl.create(:organization)}
 	let (:follower_a) {FactoryGirl.create(:follower,organizer_id:user.id,organization_id:organization.id)}
 	let (:follower_n) {FactoryGirl.create(:follower,organizer_id:user.id,organization_id:organization.id,address:nil,street_name:nil,street_number:nil)}
-
+	let (:tag) {Tag.create!(name:'feminist')}
 
 	context "creation" do
 	end
@@ -37,6 +37,12 @@ RSpec.describe Follower, type: :model do
 			note = FactoryGirl.create(:note,notable_type:follower_a.class,notable_id:follower_a.id,info:"Does not like birds",author_id:user.id)
 			expect(follower_a.notes.length).to eq(1)
 			expect(follower_a.notes.first.info).to eq('Does not like birds')
+		end
+
+		it 'should have tags' do 
+			Tagging.create!(tag_id:tag.id,taggable_type:'Follower',taggable_id:follower_a.id)
+			expect(follower_a.tags.length).to eq(1)
+			expect(follower_a.tags.first.name).to eq('feminist')
 		end
 
 	end

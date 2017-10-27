@@ -9,6 +9,7 @@ class FollowersController < ApplicationController
 		@follower = Follower.new(follower_params)
 		if @follower.valid?
 			@follower.save
+			@follower.add_tags(params["follower"]["tag_ids"]) #refactor
 			redirect_to user_path(current_user.id)
 		else
 			render :new
@@ -42,6 +43,6 @@ class FollowersController < ApplicationController
 		:phone,:email,:organizer_id,:organization_id,
 		:address, :longitude, :latitude, :zip,
 		:street_number, :street_name,
-		:city, :neighborhood, :state)
+		:city, :neighborhood, :state,:tag_ids)
 	end
 end

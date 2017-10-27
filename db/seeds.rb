@@ -16,3 +16,9 @@ Follower.create(first_name:'Sam',last_name:'Anderson',organization_id:1,organize
 		5.times {FactoryGirl.create(:follower,organizer_id:user.id,organization_id:sub_count+1)}
 	end
 end
+
+Tag.create!(name:'Feminist')
+Tag.create!(name:'LGBTQIA+')
+Tag.create!(name:'Tech')
+Tag.create!(name:'PoC')
+Tag.create!(name:'Social')

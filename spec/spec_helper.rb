@@ -6,6 +6,7 @@ RSpec.configure do |config|
   config.include SpecTestHelper, :type => :controller
   config.include SpecTestHelper, :type => :feature
   config.include SpecTestHelper, :type => :model
+  config.include SpecTestHelper, :type => :view
   config.expect_with :rspec do |expectations|
     expectations.include_chain_clauses_in_custom_matcher_descriptions = true
   end

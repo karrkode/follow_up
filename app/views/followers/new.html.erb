@@ -16,6 +16,7 @@
 	<%= f.input :email %>
 	<%= f.input :phone %>
 	<%= f.association :organization, as: :radio_buttons,collection: Organization.order(:name) %>
+  <%= f.input :tag_ids, as: :check_boxes, collection: Tag.order(:name) %>
   <%= f.input :address, input_html: {id:"gmaps-input-address", placeholder:"Address goes here.."} %>
   <%= f.hidden_field :street_number, value:''%>
   <%= f.hidden_field :street_name, value:''%>
