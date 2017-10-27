@@ -1,5 +1,5 @@
 <%= form_for @note, remote:true do |f| %>
-	<%= f.text %>
-	<%= f.hidden_field :notable_type, value:''%>
-	<%= f.button :submit %>
+	<%= f.info %>
+	<%= render "tags/form", locals: {f:f}%>
+	<%= f.button :submit, id:'submit-f-note' %>
 <% end %>
