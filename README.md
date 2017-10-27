@@ -12,6 +12,6 @@ There is partial RSpec unit testing as well as an attempt to use TravisCI for in
 
 For ideas on where it's going forward, check out my [Trello](https://trello.com/b/2AeBVEEs/follow-up). I'm most excited to add a way to create organizer terf sheets.  If you have any questions, reach out to me at aacarr5@gmail.com! 
 
-![schema](follow_up_schema.jpg)
+![schema](schema.jpg)
 
 
