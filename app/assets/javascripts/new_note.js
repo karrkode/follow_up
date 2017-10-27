@@ -9,8 +9,10 @@ $(document).on('turbolinks:load', function(){
 					}).done(function(resp){
 						$('#follower-notes').append(resp.data)
 						$('#new_note').find('textarea').val('')
+						$('.check_boxes').attr('checked',false)
 					}).fail(function(fail){
 						console.log('fail :(')
+						console.log(fail)
 					})
 	})
 
@@ -18,9 +20,9 @@ $(document).on('turbolinks:load', function(){
 		var serialized = $(form).serializeArray()
 		var json = {}
 		$.map(serialized, function(n,i){
-			json[n['name']] = n['value']
+			json[n['name']] = json[n['name']] == null ? n['value'] : json[n['name']].concat(n['value']).concat(",") //refactor so that array is created not string of ints
 		});
-		return json	
+		return json
 	}
 
 
