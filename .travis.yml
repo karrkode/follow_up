@@ -1,4 +1,28 @@
 language: ruby
+cache: bundler
+
+# before_install: 
+#   - bundle install
+
+install:
+  bundle install 
+  # bundler_args --without production
 
 rvm:
-  - 2.2
+ - 2.2.5
+
+before_script:
+ - rake db:drop 
+ - rake db:create
+ - rake db:migrate
+
+script: 
+ - rspec spec
+
+branches:
+  only:
+  - master
+  - travis
+
+env: 
+ - DB="postgresql"
