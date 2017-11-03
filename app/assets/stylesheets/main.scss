@@ -12,9 +12,13 @@ a:link {
 }
 
 body {
-	background: $foamblue
+	background: $white;
 }
 
 .link {
 	font-style: italic
+}
+
+.mainLi {
+	border-radius: 10px;
 }

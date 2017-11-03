@@ -1,5 +1,53 @@
-<h1>This is general page for <%= @follower.full_name %></h1>
+<h1>Name:<%= @follower.full_name %></h1>
+<h2>Organization:<%= @follower.organization.name%></h2>
 
 <div id="followerInfo">
-	<span><%= @follower.full_name %> was added <%= time_ago_in_words(@follower.created_at)%>. </span>
+	<h3><%= @follower.full_name %> was added <%= time_ago_in_words(@follower.created_at)%>. </h3>
+	<span class="follower-address">Address:<%=@follower.address%> </span>
 </div>
+
+<div id="followerTags">
+	<h3>Tags:</h3>
+	<% @follower.tags.each do |tag| %>
+		<div><%= tag.name %></div>
+	<% end %>
+</div>
+
+
+<div id="followerMap">
+	<iframe
+  width="600"
+  height="450"
+  frameborder="0" style="border:0"
+  src="https://www.google.com/maps/embed/v1/search?q=<%=@follower.ggl_address%>&key=AIzaSyAqLbuWncCtGnuL-pIbRGx6I44fQlIGGwE&zoom=14" allowfullscreen>
+	</iframe>
+</div>
+
+
+<div id="follower-notes">
+	<h3>Existing Notes:</h3>
+	<%@follower.notes.each do |note| %>
+		<div class="follower-note"> 
+			<span class="note-text"> <%=note.info%></span>
+			<br> 
+			<% note.tags.each do |tag| %>
+				<div class='tagDiv'> <%= tag.name %> </div>
+			<% end %>
+			<h5>Added <%= time_ago_in_words(note.created_at) unless note.created_at.nil?%></h5>
+		</div>
+	<% end %>
+</div>
+
+
+<div id="new-note-form">
+	<h4>Add a note...</h4>
+	<%= simple_form_for @note, url: new_note_path(@note), remote:true do |f| %>
+		<%= f.input :info, placeholder:'Write your note...' %>
+		<%= f.hidden_field :notable_type, value:'Follower'%>
+		<%= f.input :tag_ids, as: :check_boxes, collection: Tag.order(:name) %>
+		<%= f.hidden_field :notable_id, value:params[:id]%>
+		<%= f.hidden_field :author_id, value: current_user.id%>
+		<%= f.button :submit, id:'submit-f-note' %>
+	<% end %>
+</div>
+

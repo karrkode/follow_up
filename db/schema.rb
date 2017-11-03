@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171001023916) do
+ActiveRecord::Schema.define(version: 20171025155953) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,6 +25,16 @@ ActiveRecord::Schema.define(version: 20171001023916) do
     t.datetime "updated_at",      null: false
     t.string   "organizer_id"
     t.string   "organization_id"
+    t.string   "address"
+    t.string   "street_number"
+    t.string   "street_name"
+    t.string   "neighborhood"
+    t.string   "city"
+    t.string   "county"
+    t.string   "state"
+    t.string   "zip"
+    t.float    "latitude"
+    t.float    "longitude"
   end
 
   create_table "memberships", force: :cascade do |t|
@@ -37,15 +47,31 @@ ActiveRecord::Schema.define(version: 20171001023916) do
   end
 
   create_table "notes", force: :cascade do |t|
-    t.text    "info"
-    t.string  "notable_type"
-    t.integer "notable_id"
-    t.integer "author_id"
+    t.text     "info"
+    t.string   "notable_type"
+    t.integer  "notable_id"
+    t.integer  "author_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "organizations", force: :cascade do |t|
     t.string   "name"
     t.string   "website"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "taggings", force: :cascade do |t|
+    t.integer  "taggable_id"
+    t.string   "taggable_type"
+    t.integer  "tag_id"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+  end
+
+  create_table "tags", force: :cascade do |t|
+    t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

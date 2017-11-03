@@ -15,9 +15,13 @@ require "rails/test_unit/railtie"
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
+Dotenv::Railtie.load
+
+# HOSTNAME = ENV['HOSTNAME'] github.com/bkeepers/dotenv lists this idk y
 
 module FollowUp
   class Application < Rails::Application
+  	config.autoload_paths << "#{Rails.root}/lib"
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.

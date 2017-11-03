@@ -11,4 +11,3 @@ $(document).on 'turbolinks:load', ->
 			else
 				$(member).hide()
 
-

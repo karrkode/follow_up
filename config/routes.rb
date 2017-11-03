@@ -7,6 +7,12 @@ Rails.application.routes.draw do
   resources :users do 
   	resources :followers
   end
+
+  resources :users, only: [:new, :create,:edit,:update,:destroy]
+
+  get '/notes/new', :to => 'notes#new', :as => :new_note
+  get '/notes/:id', :to => 'notes#show', :as => :notes
+  post '/notes/new', :to => 'notes#create'
   
   get    '/login',   to: 'sessions#new'
   post   '/login',   to: 'sessions#create'

@@ -6,10 +6,12 @@ RSpec.describe User, type: :model do
 
 	context 'basic attributes' do 
 		
-		describe 'user model' do 
+		describe 'user model' do
+		 
 			it 'should be a user' do 
 				expect(user).to be_a User
 			end
+
 		end
 
 		describe 'relationships' do 
@@ -25,8 +27,8 @@ RSpec.describe User, type: :model do
 				expect(user.followers.first.full_name).to eq(follower.full_name)
 			end
 
-
 		end
+
 	end
 
 end
