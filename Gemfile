@@ -44,7 +44,7 @@ gem 'bitters'
 gem 'jquery-turbolinks'
 gem 'dotenv-rails', groups: [:development, :test]
 gem 'dotenv-rails', require: 'dotenv/rails-now'
-gem 'aws-sdk'
+gem 'aws-sdk', '~> 3'
 
 
 

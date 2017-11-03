@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   resources :organizations, only: [:new, :show, :index, :create]
   get 'sessions/new'
 
@@ -6,6 +7,7 @@ Rails.application.routes.draw do
 
   resources :users do 
   	resources :followers
+    resources :uploads, only: [:new, :create, :index, :destroy]
   end
 
   resources :users, only: [:new, :create,:edit,:update,:destroy]

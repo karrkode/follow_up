@@ -2,6 +2,8 @@
 
 <h3><%=@user.full_name%></h3>
 
+<span class="user_upload"><%= link_to 'Upload something', new_user_upload_path(current_user)%></span>
+
 <div class="userMemberships">
 	<span><%= relevant_user? ? "You" : "They" %> belong to...</span>
 	<ul class="memberList">
