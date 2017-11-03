@@ -1,14 +1,12 @@
 language: ruby
 cache: bundler
 
-before_install: 
-  - rm Gemfile.lock || true
-  - bundle install
+# before_install: 
+#   - bundle install
 
 install:
-
-  bundle install --deployment --without development
-  bundler_args --without production
+  bundle install 
+  # bundler_args --without production
 
 rvm:
  - 2.2.5
