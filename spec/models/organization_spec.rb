@@ -11,5 +11,12 @@ RSpec.describe Organization, type: :model do
   		expect(organization.members.count).to eq(1)
   		expect(organization.members.first.full_name).to eq('Andrew Carr')
   	end
+
+  	it 'should have uploads' do 
+  		upload = FactoryGirl.create(:upload,uploader_id:user.id,affiliate_id:organization.id)
+  		expect(organization.uploads.count).to eq(1)
+  		expect(organization.uploads.first.name).to eq(upload.name)
+  	end
+
   end
 end
