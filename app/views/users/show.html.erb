@@ -2,6 +2,7 @@
 
 <h3><%=@user.full_name%></h3>
 
+
 <span class="user_upload"><%= link_to 'Upload something', new_user_upload_path(current_user)%></span>
 
 <div class="userMemberships">
@@ -13,24 +14,21 @@
 	</ul>
 </div>
 
-<% if relevant_user?%>
-	<h4>Click <%= link_to 'here', edit_user_path(@user)%> to edit</h4>
-	<h4>Click <%= link_to 'here', new_user_follower_path(@user), class:'link'%> to create a follower!</h4>
+<h4>Click <%= link_to 'here', edit_user_path(@user)%> to edit</h4>
+<h4>Click <%= link_to 'here', new_user_follower_path(@user), class:'link'%> to create a follower!</h4>
 
-	<div class="followerListDiv">
-	<div class="orgList">
-		<div class="orgName org0">All Members</div>
-		<% Organization.all.each do |org| %>
-			<div class="orgName <%='org'+org.id.to_s%>"><%= org.name%></div>
-		<% end %>
-	</div>
-		<ul class="followerList">
-			<%current_user.followers.each do |follower| %>
-				<li class="followerLi followerShow <%= 'org'+follower.organization_id %>"> <%= link_to follower.full_name, user_follower_path(current_user.id,follower.id)%> (<%= follower.organization.name%>) </li>
-			<%end%>
-		</ul>
-	</div>
+<div class="followerListDiv">
+<div class="orgList">
+	<div class="orgName org0">All Members</div>
+	<% Organization.all.each do |org| %>
+		<div class="orgName <%='org'+org.id.to_s%>"><%= org.name%></div>
+	<% end %>
+</div>
+	<ul class="followerList">
+		<%current_user.followers.each do |follower| %>
+			<li class="followerLi followerShow <%= 'org'+follower.organization_id %>"> <%= link_to follower.full_name, user_follower_path(current_user.id,follower.id)%> (<%= follower.organization.name%>) </li>
+		<%end%>
+	</ul>
+</div>
 
-
-<% end %>
 

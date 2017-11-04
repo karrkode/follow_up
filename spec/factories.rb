@@ -32,5 +32,12 @@ FactoryGirl.define do
 		info {Faker::Lorem.paragraph}
 	end
 
+	factory :upload do 
+		uploader_id 1
+		name { Faker::Book.title }
+		affiliate_id 1
+		s3_id { Faker::Crypto.md5 }
+	end
+
 
 end
