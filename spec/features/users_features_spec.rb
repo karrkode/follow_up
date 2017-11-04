@@ -1,7 +1,8 @@
 require 'rails_helper'
 
-describe "the user actions ", :type => :feature do
+describe "the user actions", :type => :feature do
   before :each do
+    User.delete_all
   end
 
   it "signs in a users" do
@@ -14,14 +15,12 @@ describe "the user actions ", :type => :feature do
       fill_in 'Password confirmation', with: 'password'
     end
     click_button 'Create User'
-    expect(page).to have_content 'Andrew Carr'
+    expect(User.last.email).to eq('a4@gmail.com')
   end
 
   it "creates a new session" do
     FactoryGirl.create(:user,first_name:'Andrew',last_name:'Carr', email:'a1@gmail.com')
-
     visit '/login' 
-
     within('#newSession') do 
       fill_in 'Email', with: 'a1@gmail.com'
       fill_in 'Password', with: 'password'

@@ -2,31 +2,27 @@ require 'rails_helper'
 
 RSpec.describe UploadsController, type: :controller do
 
-  describe "GET #new" do
-    it "returns http success" do
-      get :new
-      expect(response).to have_http_status(:success)
-    end
-  end
+  context 'generated tests' do
 
-  describe "GET #create" do
-    it "returns http success" do
-      get :create
-      expect(response).to have_http_status(:success)
-    end
-  end
+    let (:user)  { FactoryGirl.create(:user) } 
 
-  describe "GET #index" do
-    it "returns http success" do
-      get :index
-      expect(response).to have_http_status(:success)
+    before(:each) do 
+      login(user)
     end
-  end
 
-  describe "GET #destroy" do
-    it "returns http success" do
-      get :destroy
-      expect(response).to have_http_status(:success)
+    describe "GET #new" do
+      it "returns http success" do
+        get :new, {user_id:user.id}
+        expect(response).to have_http_status(:success)
+      end
+    end
+
+
+    xdescribe "GET #destroy" do
+      it "returns http success" do
+        get :destroy
+        expect(response).to have_http_status(:success)
+      end
     end
   end
 
