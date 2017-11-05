@@ -7,7 +7,7 @@ Rails.application.routes.draw do
 
   resources :users do 
   	resources :followers
-    resources :uploads, only: [:new, :create, :index, :destroy]
+    resources :uploads, only: [:new, :create, :index, :destroy, :show]
   end
 
   resources :users, only: [:new, :create,:edit,:update,:destroy]
