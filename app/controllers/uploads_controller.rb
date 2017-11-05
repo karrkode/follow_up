@@ -22,9 +22,11 @@ class UploadsController < ApplicationController
   end
 
   def show
+    @upload = Upload.find(id:params[:id])
   end
 
   def index
+    @uploads = current_user.uploads
   end
 
   def destroy
