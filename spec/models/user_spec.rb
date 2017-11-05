@@ -27,6 +27,12 @@ RSpec.describe User, type: :model do
 				expect(user.followers.first.full_name).to eq(follower.full_name)
 			end
 
+			it 'should have uploads' do 
+				upload = FactoryGirl.create(:upload,affiliate_id:1,uploader_id:user.id)
+				expect(user.uploads.length).to eq(1)
+				expect(user.uploads.first).to eq(upload)
+			end
+
 		end
 
 	end
