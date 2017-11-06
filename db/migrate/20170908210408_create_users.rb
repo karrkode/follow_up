@@ -7,6 +7,8 @@ class CreateUsers < ActiveRecord::Migration[5.0]
     	t.string :email, uniqueness:true
 
     	t.string :affiliation 
+
+    	t.timestamps
     end
   end
 end
