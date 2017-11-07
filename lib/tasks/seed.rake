@@ -15,8 +15,6 @@ namespace :seed do
     factories = Rails.root.join('spec','factories.rb')
     load(factories)
     Dir[Rails.root.join('db', 'seeds', '*.rb')].each do |file|
-      binding.pry
-      time = Time.now.strftime("%Y%m%d%H%M%S")
       load(file)
   	end
   end
