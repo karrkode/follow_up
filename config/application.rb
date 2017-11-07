@@ -17,8 +17,6 @@ require "rails/test_unit/railtie"
 Bundler.require(*Rails.groups)
 Dotenv::Railtie.load
 
-# HOSTNAME = ENV['HOSTNAME'] github.com/bkeepers/dotenv lists this idk y
-
 module FollowUp
   class Application < Rails::Application
   	config.autoload_paths << "#{Rails.root}/lib"
