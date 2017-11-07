@@ -11,22 +11,14 @@ namespace :seed do
   end
 
   desc "load seeds"
-  task load_seeds: :environment do 
+  task :load, :environment do 
+  	time = Time.now.strftime("%Y%m%d%H%M%S")
+  	factories = Rails.root.join('spec','factories.rb')
+  	load(factories)
+  	binding.pry
+  	Dir[Rails.root.join('db', 'seeds', '*.rb')].each do |file|
+  		load(file)
+  	end
   end
-
-  # private #refactor
-
-  # def extract_file_name
-  # 	options = {}
-  # 	OptionParser.new do |opts|
-	 #    opts.banner = "Usage: rake seed [options]"
-	 #    opts.on('-n','--name STRING',String) do |name|
-	 #    	binding.pry
-	 #    	options[:name] = name
-	 #    end
-  # 	end.parse!
-  # 	binding.pry
-  # 	options
-  # end
 
 end
