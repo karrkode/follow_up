@@ -53,6 +53,5 @@ Rails.application.configure do
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
 
   # Enable threaded mode
-  config.threadsafe!
   config.dependency_loading = true if $rails_rake_task
 end

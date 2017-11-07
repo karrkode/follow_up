@@ -11,13 +11,13 @@ namespace :seed do
   end
 
   desc "load seeds"
-  task :load, :environment do 
-  	time = Time.now.strftime("%Y%m%d%H%M%S")
-  	factories = Rails.root.join('spec','factories.rb')
-  	load(factories)
-  	binding.pry
-  	Dir[Rails.root.join('db', 'seeds', '*.rb')].each do |file|
-  		load(file)
+  task :load, :environment do
+    factories = Rails.root.join('spec','factories.rb')
+    load(factories)
+    Dir[Rails.root.join('db', 'seeds', '*.rb')].each do |file|
+      binding.pry
+      time = Time.now.strftime("%Y%m%d%H%M%S")
+      load(file)
   	end
   end
 
