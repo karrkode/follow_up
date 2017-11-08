@@ -11,9 +11,7 @@ namespace :seed do
   end
 
   desc "load seeds"
-  task :load, :environment do
-    factories = Rails.root.join('spec','factories.rb')
-    load(factories)
+  task :load => :environment do
     Dir[Rails.root.join('db', 'seeds', '*.rb')].each do |file|
       load(file)
   	end

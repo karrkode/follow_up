@@ -52,6 +52,4 @@ Rails.application.configure do
   # routes, locales, etc. This feature depends on the listen gem.
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
 
-  # Enable threaded mode
-  config.dependency_loading = true if $rails_rake_task
 end
