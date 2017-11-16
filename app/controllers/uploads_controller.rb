@@ -22,7 +22,7 @@ class UploadsController < ApplicationController
   end
 
   def show
-    @upload = Upload.find(id:params[:id])
+    @upload = Upload.find(params[:id])
   end
 
   def index
