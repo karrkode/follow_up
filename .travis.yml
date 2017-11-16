@@ -1,12 +1,8 @@
 language: ruby
 cache: bundler
 
-# before_install: 
-#   - bundle install
-
 install:
   bundle install 
-  # bundler_args --without production
 
 rvm:
  - 2.2.5
@@ -22,7 +18,6 @@ script:
 branches:
   only:
   - master
-  - travis
 
 env: 
  - DB="postgresql"

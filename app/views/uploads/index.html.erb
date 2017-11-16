@@ -1,2 +1,7 @@
-<h1>Uploads#index</h1>
-<p>Find me in app/views/uploads/index.html.erb</p>
+Here are your uploads..
+
+<div class="upload_list">
+	<% @uploads.each do |upload| %>
+		<%= upload.name %>
+	<%end%>
+</div>
