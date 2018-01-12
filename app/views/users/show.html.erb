@@ -11,7 +11,7 @@
 	<span><%= relevant_user? ? "You" : "They" %> belong to...</span>
 	<ul class="memberList">
 		<% @user.affiliations.each do |mem| %>
-			<li class="memberListItem"> <%= mem.name %> </li>
+			<%= link_to mem.name, organization_path(mem.id)%>
 		<% end %>
 	</ul>
 </div>

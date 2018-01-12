@@ -1,7 +1,8 @@
 class Organization < ApplicationRecord
 
 	has_many :memberships
-	has_many :members, through: :memberships, :source => :user
+	has_many :leaders, through: :memberships, :source => :user
+	has_many :members, class_name: 'Follower'
 	has_many :notes, as: :notable
 	validates :name, length: {minimum: 3}
 	has_many :tags, as: :taggable
