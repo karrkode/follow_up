@@ -1,7 +1,10 @@
 Here are your uploads..
 
 <div class="upload_list">
+
 	<% @uploads.each do |upload| %>
-		<%= upload.name %>
+		<div class="upload_item" >
+			<%= upload.name %>
+		</div>
 	<%end%>
 </div>
