@@ -39,5 +39,10 @@ FactoryGirl.define do
 		s3_id { Faker::Crypto.md5 }
 	end
 
+	factory :terf do 
+		owner_id 1
+		organization_id { rand(1..3)}
+	end
+
 
 end
