@@ -1,0 +1,2 @@
+class TerfEntry < ApplicationRecord
+end

@@ -44,5 +44,17 @@ FactoryGirl.define do
 		organization_id { rand(1..3)}
 	end
 
+	factory :terf_entry do 
+		first_name { Faker::Name.first_name}
+		last_name {Faker::Name.last_name}
+		street_name {Faker::Address.street_name}
+		street_number {[1..5000].sample}
+		neighborhood {Faker::Address.community}
+		city {Faker::Address.city}
+		county {"County of "+Faker::TwinPeaks.character}
+		state {Faker::Address.state}
+		zip {Faker::Address.zip}
+	end
+
 
 end
