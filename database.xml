@@ -32,7 +32,7 @@
     <type label="SET" length="1" sql="SET" quote=""/>
     <type label="Bit" length="0" sql="bit" quote=""/>
   </group>
-</datatypes><table x="188" y="328" name="users">
+</datatypes><table x="234" y="442" name="users">
 <row name="id" null="1" autoincrement="1">
 <datatype>INTEGER</datatype>
 <default>NULL</default></row>
@@ -52,7 +52,7 @@
 <part>id</part>
 </key>
 </table>
-<table x="573" y="76" name="organizations">
+<table x="57" y="6" name="organizations">
 <row name="id" null="1" autoincrement="1">
 <datatype>INTEGER</datatype>
 <default>NULL</default></row>
@@ -66,7 +66,7 @@
 <part>id</part>
 </key>
 </table>
-<table x="403" y="383" name="followers">
+<table x="540" y="438" name="followers">
 <row name="id" null="1" autoincrement="1">
 <datatype>INTEGER</datatype>
 <default>NULL</default></row>
@@ -117,7 +117,7 @@
 <part>id</part>
 </key>
 </table>
-<table x="392" y="174" name="memberships">
+<table x="638" y="13" name="memberships">
 <row name="id" null="1" autoincrement="1">
 <datatype>INTEGER</datatype>
 <default>NULL</default></row>
@@ -133,7 +133,7 @@
 <part>id</part>
 </key>
 </table>
-<table x="415" y="286" name="tags">
+<table x="598" y="184" name="tags">
 <row name="id" null="1" autoincrement="1">
 <datatype>INTEGER</datatype>
 <default>NULL</default></row>
@@ -144,7 +144,7 @@
 <part>id</part>
 </key>
 </table>
-<table x="589" y="281" name="taggings">
+<table x="885" y="9" name="taggings">
 <row name="id" null="1" autoincrement="1">
 <datatype>INTEGER</datatype>
 <default>NULL</default></row>
@@ -164,7 +164,7 @@
 <part>id</part>
 </key>
 </table>
-<table x="209" y="70" name="uploads">
+<table x="147" y="186" name="uploads">
 <row name="id" null="1" autoincrement="1">
 <datatype>INTEGER</datatype>
 <default>NULL</default></row>
@@ -193,9 +193,9 @@
 <row name="names" null="1" autoincrement="0">
 <datatype>INTEGER</datatype>
 <default>NULL</default></row>
-<row name="organizer_id" null="1" autoincrement="0">
+<row name="organization_id" null="1" autoincrement="0">
 <datatype>INTEGER</datatype>
-<default>NULL</default><relation table="users" row="id" />
+<default>NULL</default><relation table="organizations" row="id" />
 </row>
 <key type="PRIMARY" name="">
 <part>id</part>

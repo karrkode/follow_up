@@ -8,6 +8,7 @@ class CreateTerfEntries < ActiveRecord::Migration[5.0]
       t.string :state
       t.integer :zip
       t.string :county
+      t.integer :terf_id
 
       t.timestamps
     end

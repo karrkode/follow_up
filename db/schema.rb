@@ -84,6 +84,7 @@ ActiveRecord::Schema.define(version: 20180126185757) do
     t.string   "state"
     t.integer  "zip"
     t.string   "county"
+    t.integer  "terf_id"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
   end
