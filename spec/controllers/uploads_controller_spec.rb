@@ -5,6 +5,7 @@ RSpec.describe UploadsController, type: :controller do
   context 'generated tests' do
 
     let (:user)  { FactoryGirl.create(:user) } 
+    let (:organization) {FactoryGirl.create(:organization)}
 
     before(:each) do 
       login(user)
@@ -19,7 +20,8 @@ RSpec.describe UploadsController, type: :controller do
 
     describe 'GET #show' do 
       it 'return http success' do 
-        upload = FactoryGirl.create(:upload,affiliate_id:1,uploader_id:user.id)
+        # binding.pry
+        upload = FactoryGirl.create(:upload,affiliate_id:organization.id,uploader_id:user.id)
         get :show, params: {user_id:user.id,id:upload.id}
         expect(response).to have_http_status(:success)
       end

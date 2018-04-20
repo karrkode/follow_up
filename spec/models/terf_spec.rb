@@ -8,7 +8,6 @@ RSpec.describe Terf, type: :model do
 
   	it 'should be correct' do
   		terf = FactoryGirl.create(:terf,owner_id:user.id,organization_id:organization.id)
-  		expect(terf.owner.full_name).to eq(user.full_name)
   		expect(terf.organization).to eq(organization)
   	end
 

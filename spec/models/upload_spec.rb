@@ -11,7 +11,7 @@ RSpec.describe Upload, type: :model do
 		end
 
 		it 'should belong to an organization' do 
-			expect(upload.affiliation.name).to eq(organization.name)
+			expect(upload.affiliate.name).to eq(organization.name)
 		end
 
 	end

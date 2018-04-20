@@ -28,7 +28,7 @@ RSpec.describe User, type: :model do
 			end
 
 			it 'should have uploads' do 
-				upload = FactoryGirl.create(:upload,affiliate_id:1,uploader_id:user.id)
+				upload = FactoryGirl.create(:upload,affiliate_id:organization.id,uploader_id:user.id)
 				expect(user.uploads.length).to eq(1)
 				expect(user.uploads.first).to eq(upload)
 			end
