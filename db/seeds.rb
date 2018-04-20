@@ -27,7 +27,7 @@ real_addrs = [{"address"=>"3902 W 55th St", "city"=>"Chicago", "state"=>"IL", "z
 
 9.times do |count|
 	user = User.where(id:count+1).first
-	t = Terf.create!(owner_id:user.id,organization_id:user.affiliations.first.id)
+	t = Terf.create!(organization_id:user.affiliations.first.id)
 	14.times  do |c|
 		ra = real_addrs[ (count+1) * (c+1)]
 		street_num,street_name = ra["address"].match(/(\d+)(.*)/)[1,2]

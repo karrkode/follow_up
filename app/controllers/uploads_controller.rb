@@ -14,6 +14,7 @@ class UploadsController < ApplicationController
         s3_id:secure_id,
         affiliate_id:upload_params[:affiliate_id]
       )
+      generateTerf(upload,upload_params[:affiliate_id])
       redirect_to user_uploads_path(user_id:current_user.id, id:@upload.id)
     else
       flash.now[:notice] = 'There was an error'
