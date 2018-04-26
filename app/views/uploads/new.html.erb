@@ -3,6 +3,6 @@
 <%= simple_form_for @upload, :url => user_uploads_path(current_user.id), :multipart => :true, :method => :post do |f| %>
 	<%= f.input :file, as: :file %>
 	<%= f.hidden_field :uploader_id, value:current_user.id %>
-	<%= f.input :affiliate_id, as: :radio_buttons, collection: current_user.affiliations.order(:name) %>
+	<%= f.input :organization_id, as: :radio_buttons, collection: current_user.affiliations.order(:name) %>
 	<%= submit_tag 'Upload file' %>
 <% end %>

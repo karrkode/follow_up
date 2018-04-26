@@ -12,9 +12,9 @@ class UploadsController < ApplicationController
       upload = Upload.create!(name:file.original_filename,
         uploader_id:current_user.id,
         s3_id:secure_id,
-        affiliate_id:upload_params[:affiliate_id]
+        organization_id:upload_params[:organization_id]
       )
-      Upload.generateTerf(upload,upload_params[:affiliate_id],file,upload.id)
+      Upload.generateTerf(upload,upload_params[:organization_id],file,upload.id)
       redirect_to user_uploads_path(user_id:current_user.id, id:upload.id)
     else
       flash.now[:notice] = 'There was an error'
@@ -36,6 +36,6 @@ class UploadsController < ApplicationController
   private
 
   def upload_params
-    params.require(:upload).permit(:file,:uploader_id,:affiliate_id)
+    params.require(:upload).permit(:file,:uploader_id,:organization_id)
   end
 end
