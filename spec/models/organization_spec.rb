@@ -28,7 +28,7 @@ RSpec.describe Organization, type: :model do
 
 
   	it 'should have uploads' do 
-  		upload = FactoryGirl.create(:upload,uploader_id:user.id,affiliate_id:organization.id)
+  		upload = FactoryGirl.create(:upload,uploader_id:user.id,organization_id:organization.id)
   		expect(organization.uploads.count).to eq(1)
   		expect(organization.uploads.first.name).to eq(upload.name)
   	end

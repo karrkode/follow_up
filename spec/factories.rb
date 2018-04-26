@@ -35,12 +35,11 @@ FactoryGirl.define do
 	factory :upload do 
 		uploader_id 1
 		name { Faker::Book.title }
-		affiliate_id 1
+		organization_id 1
 		s3_id { Faker::Crypto.md5 }
 	end
 
 	factory :terf do 
-		owner_id 1
 		organization_id { rand(1..3)}
 	end
 

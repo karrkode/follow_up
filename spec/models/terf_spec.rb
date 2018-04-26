@@ -5,9 +5,10 @@ RSpec.describe Terf, type: :model do
 
   	let(:user) {FactoryGirl.create(:user)}
   	let(:organization) {FactoryGirl.create(:organization)}
+  	let(:upload) {FactoryGirl.create(:upload,uploader_id:user.id,organization_id:organization.id)}
 
-  	it 'should be correct' do
-  		terf = FactoryGirl.create(:terf,owner_id:user.id,organization_id:organization.id)
+  	it 'should have associations' do
+  		terf = FactoryGirl.create(:terf,upload_id:upload.id,organization_id:organization.id)
   		expect(terf.organization).to eq(organization)
   	end
 

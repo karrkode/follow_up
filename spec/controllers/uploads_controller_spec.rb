@@ -20,8 +20,7 @@ RSpec.describe UploadsController, type: :controller do
 
     describe 'GET #show' do 
       it 'return http success' do 
-        # binding.pry
-        upload = FactoryGirl.create(:upload,affiliate_id:organization.id,uploader_id:user.id)
+        upload = FactoryGirl.create(:upload,organization_id:organization.id,uploader_id:user.id)
         get :show, params: {user_id:user.id,id:upload.id}
         expect(response).to have_http_status(:success)
       end
