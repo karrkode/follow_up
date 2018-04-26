@@ -1,6 +1,6 @@
-Organization.create!(name:'Clinton Foundation', website:'https://www.clintonfoundation.org/')
-Organization.create!(name:"The People's Lobby", website:'http://www.thepeopleslobbyusa.org/')
-Organization.create!(name: 'Our Revolution', website:'https://ourrevolution.com/')
+o1 = Organization.create!(name:'Clinton Foundation', website:'https://www.clintonfoundation.org/')
+o2 = Organization.create!(name:"The People's Lobby", website:'http://www.thepeopleslobbyusa.org/')
+o3 = Organization.create!(name: 'Our Revolution', website:'https://ourrevolution.com/')
 
 me = User.create!(first_name:'Andrew',last_name:'Carr', email:'aacarr5@gmail.com',password:'password')
 Membership.create(user_id:me.id,organization_id:1)
@@ -27,7 +27,7 @@ real_addrs = [{"address"=>"3902 W 55th St", "city"=>"Chicago", "state"=>"IL", "z
 
 9.times do |count|
 	user = User.where(id:count+1).first
-	u = FactoryGirl.create(:upload,o_id:user.memberships.first.id)
+	u = FactoryGirl.create(:upload,organization_id:[o1,o2,o3].sample.id,uploader_id:user.id)
 	t = Terf.create!(organization_id:user.affiliations.first.id,upload_id:count+1)
 	14.times  do |c|
 		ra = real_addrs[ (count+1) * (c+1)]
