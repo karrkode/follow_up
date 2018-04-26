@@ -9,13 +9,13 @@ class UploadsController < ApplicationController
     resp = S3_BUCKET.object(secure_id).upload_file(file.tempfile)
 
     if resp #refactor
-      @upload = Upload.create!(name:file.original_filename,
+      upload = Upload.create!(name:file.original_filename,
         uploader_id:current_user.id,
         s3_id:secure_id,
         affiliate_id:upload_params[:affiliate_id]
       )
-      generateTerf(upload,upload_params[:affiliate_id])
-      redirect_to user_uploads_path(user_id:current_user.id, id:@upload.id)
+      Upload.generateTerf(upload,upload_params[:affiliate_id],file,upload.id)
+      redirect_to user_uploads_path(user_id:current_user.id, id:upload.id)
     else
       flash.now[:notice] = 'There was an error'
       render :new
