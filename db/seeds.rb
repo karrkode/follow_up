@@ -27,11 +27,12 @@ real_addrs = [{"address"=>"3902 W 55th St", "city"=>"Chicago", "state"=>"IL", "z
 
 9.times do |count|
 	user = User.where(id:count+1).first
-	t = Terf.create!(organization_id:user.affiliations.first.id)
+	u = FactoryGirl.create(:upload,o_id:user.memberships.first.id)
+	t = Terf.create!(organization_id:user.affiliations.first.id,upload_id:count+1)
 	14.times  do |c|
 		ra = real_addrs[ (count+1) * (c+1)]
 		street_num,street_name = ra["address"].match(/(\d+)(.*)/)[1,2]
-		TerfEntry.create(first_name:Faker::Name.first_name,last_name:Faker::Name.last_name,street_number:street_num,street_name:street_name,state:'IL',zip:nil,terf_id:t.id)
+		TerfEntry.create(first_name:Faker::Name.first_name,last_name:Faker::Name.last_name,street_number:street_num,street_name:street_name,state:'IL',zip:ra["zip"],city:ra["city"],terf_id:t.id)
 	end
 	
 end

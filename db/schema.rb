@@ -82,6 +82,7 @@ ActiveRecord::Schema.define(version: 20180126185757) do
     t.integer  "street_number"
     t.string   "street_name"
     t.string   "state"
+    t.string   "city"
     t.integer  "zip"
     t.string   "county"
     t.integer  "terf_id"
@@ -90,8 +91,8 @@ ActiveRecord::Schema.define(version: 20180126185757) do
   end
 
   create_table "terfs", force: :cascade do |t|
-    t.integer  "owner_id"
     t.integer  "organization_id"
+    t.integer  "upload_id"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
   end
@@ -99,10 +100,10 @@ ActiveRecord::Schema.define(version: 20180126185757) do
   create_table "uploads", force: :cascade do |t|
     t.string   "name"
     t.integer  "uploader_id"
-    t.integer  "affiliate_id"
+    t.integer  "organization_id"
     t.string   "s3_id"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
   end
 
   create_table "users", force: :cascade do |t|

@@ -6,6 +6,7 @@ class CreateTerfEntries < ActiveRecord::Migration[5.0]
       t.integer :street_number
       t.string :street_name
       t.string :state
+      t.string :city
       t.integer :zip
       t.string :county
       t.integer :terf_id
